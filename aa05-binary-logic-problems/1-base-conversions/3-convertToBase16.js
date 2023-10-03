@@ -3,9 +3,11 @@
 /******************************************************************************/
 
 const convertToBase16 = element => {
-  if(typeof element === 'string' && element.startsWith('0x')){
-    return '0x' + (parseInt(element, 2).toString(16))
-  }
+  if(typeof element === 'string' && element.startsWith('0b')){
+    return '0x' + (parseInt(element.substring(2), 2).toString(16))
+  };
+
+  return `0x${element.toString(16)}`
 };
 
 /******************************************************************************/
